@@ -1,3 +1,62 @@
+/* Estilos personalizados mínimos para complementar Bootstrap */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 70px; /* Evita que el navbar tape los títulos al navegar */
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+}
+/* Contenedor principal del Hero */
+.hero-container {
+  position: relative;
+  height: 80vh; /* Ajusta la altura a tu gusto */
+  min-height: 500px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* El video se expande para cubrir todo el fondo */
+.video-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Evita que el usuario pause el video por accidente */
+  z-index: 1;
+}
+
+.video-foreground iframe {
+  width: 100vw;
+  height: 56.25vw; 
+  min-height: 100vh;
+  min-width: 177.77vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
 }
